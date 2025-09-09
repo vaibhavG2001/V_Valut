@@ -18,7 +18,7 @@ const nodemailer = require("nodemailer")
 
 
 //////////////////
-const upload=require("./upload")
+const upload = require("./upload")
 //////////////////
 
 
@@ -29,10 +29,23 @@ app.use(cookieParser())
 app.use("/uploads", express.static(path.join(__dirname, "uploads")))
 
 // app.use(express.urlencoded({ extended: true }))
+const allowedOrigins = [
+    "http://localhost:3000",
+    "https://v-valut-2.onrender.com"
+];
+
 app.use(cors({
-    origin: "http://localhost:3000",
-    credentials: true,
-}))
+    origin: function (origin, callback) {
+        // allow requests with no origin (like mobile apps, Postman)
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.indexOf(origin) === -1) {
+            let msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+            return callback(new Error(msg), false);
+        }
+        return callback(null, true);
+    },
+    credentials: true
+}));
 
 
 app.post("/registration", async (req, res) => {
@@ -166,7 +179,7 @@ app.post("/dashboard", middleware, upload.single("file"), async (req, res) => {
         let { id } = req.user
         // console.log(id)
         let find = await schema.findOne({ _id: id })
-        
+
         if (find) {
             if (!find.uploadImg.includes(req.file.path)) {
                 let { uploadImg } = find
@@ -181,7 +194,7 @@ app.post("/dashboard", middleware, upload.single("file"), async (req, res) => {
                 return res.status(200).json({
                     imgArray: update.uploadImg,
                     msg: "Successfully uploaded!",
-                    public_id:req.file.filename
+                    public_id: req.file.filename
                 })
             }
 
@@ -311,7 +324,7 @@ app.post("/deleteuser", async (req, res) => {
     try {
 
         let { id } = req.body
-        let personFind=await schema.findOne({_id:id})
+        let personFind = await schema.findOne({ _id: id })
 
         let node = nodemailer.createTransport({
             service: "gmail",
