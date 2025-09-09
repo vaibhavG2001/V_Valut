@@ -1,0 +1,1016 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+
+.regis {
+  position: relative;
+  height: 80vh;
+  background-image: url("https://images.unsplash.com/photo-1624969862644-791f3dc98927?q=80&w=1170&auto=format&fit=crop");
+}
+
+.container {
+  /* border: 2px solid red; */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.1rem;
+  min-height: 91vh;
+  font-weight: bolder;
+  border-radius: 2rem;
+
+}
+
+p {
+  min-height: 2rem;
+  font-family: 'Courier New', Courier, monospace;
+  /* color: red; */
+  font-weight: bold;
+  font-size: 1.1rem;
+  /* border: 2px solid red; */
+}
+
+.inp {
+  width: 40vw;
+
+}
+
+.inp input {
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 255, 255, 0.4);
+
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+
+
+/* Registration btn */
+/* From Uiverse.io by mrhyddenn */
+.shadow__btn {
+  padding: 10px 20px;
+  border: none;
+  font-size: 17px;
+  /* background-color: white; */
+  color: #fff;
+  border-radius: 7px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.5s;
+  transition-property: box-shadow;
+}
+
+.shadow__btn {
+  /* background: rgb(0, 0, 0); */
+  color: black;
+  margin: 1rem;
+}
+
+.shadow__btn:hover {
+  background-color: rgb(46, 169, 169);
+  /* color: white; */
+}
+
+
+
+/* Login */
+
+
+
+/* From Uiverse.io by ilkhoeri */
+.upperform {
+  /* border: 2px solid red; */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+
+.upperform2 {
+  /* border: 2px solid red; */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.cardhere {
+  --p: 32px;
+  /* text-align: center; */
+  --h-form: auto;
+  --w-form: 380px;
+  --input-px: 0.75rem;
+  --input-py: 0.65rem;
+  --submit-h: 38px;
+  --blind-w: 64px;
+  --space-y: 0.5rem;
+  width: var(--w-form);
+  height: var(--h-form);
+  max-width: 100%;
+  border-radius: 16px;
+  background: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: var(--p);
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none;
+  user-select: none;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.card:hover {
+  box-shadow: 0px 14px 94px 4px cyan;
+
+}
+
+.avatar {
+  --sz-avatar: 166px;
+  order: 0;
+  width: var(--sz-avatar);
+  min-width: var(--sz-avatar);
+  max-width: var(--sz-avatar);
+  height: var(--sz-avatar);
+  min-height: var(--sz-avatar);
+  max-height: var(--sz-avatar);
+  border: 1px solid #707070;
+  border-radius: 9999px;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 2;
+  perspective: 80px;
+  position: relative;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --sz-svg: calc(var(--sz-avatar) - 10px);
+}
+
+.avatar svg {
+  position: absolute;
+  transition:
+    transform 0.2s ease-in,
+    opacity 0.1s;
+  transform-origin: 50% 100%;
+  height: var(--sz-svg);
+  width: var(--sz-svg);
+  pointer-events: none;
+}
+
+.avatar svg#monkey {
+  z-index: 1;
+}
+
+.avatar svg#monkey-hands {
+  z-index: 2;
+  transform-style: preserve-3d;
+  transform: translateY(calc(var(--sz-avatar) / 1.25)) rotateX(-21deg);
+}
+
+.avatar::before {
+  content: "";
+  border-radius: 45%;
+  width: calc(var(--sz-svg) / 3.889);
+  height: calc(var(--sz-svg) / 5.833);
+  border: 0;
+  border-bottom: calc(var(--sz-svg) * (4 / 100)) solid #3c302a;
+  bottom: 20%;
+
+  position: absolute;
+  transition: all 0.2s ease;
+  z-index: 3;
+}
+
+.blind-check:checked~.avatar::before {
+  width: calc(var(--sz-svg) * (9 / 100));
+  height: 0;
+  border-radius: 50%;
+  border-bottom: calc(var(--sz-svg) * (10 / 100)) solid #3c302a;
+}
+
+.avatar svg#monkey .monkey-eye-r,
+.avatar svg#monkey .monkey-eye-l {
+  animation: blink 10s 1s infinite;
+  transition: all 0.2s ease;
+}
+
+@keyframes blink {
+
+  0%,
+  2%,
+  4%,
+  26%,
+  28%,
+  71%,
+  73%,
+  100% {
+    ry: 4.5;
+    cy: 31.7;
+  }
+
+  1%,
+  3%,
+  27%,
+  72% {
+    ry: 0.5;
+    cy: 30;
+  }
+}
+
+.blind-check:checked~.avatar svg#monkey .monkey-eye-r,
+.blind-check:checked~.avatar svg#monkey .monkey-eye-l {
+  ry: 0.5;
+  cy: 30;
+}
+
+.blind-check:checked~.avatar svg#monkey-hands {
+  transform: translate3d(0, 0, 0) rotateX(0deg);
+}
+
+.avatar svg#monkey,
+.avatar::before,
+.avatar svg#monkey .monkey-eye-nose,
+.avatar svg#monkey .monkey-eye-r,
+.avatar svg#monkey .monkey-eye-l {
+  transition: all 0.2s ease;
+}
+
+.blind-check:checked~.form:focus-within~.avatar svg#monkey,
+.blind-check:checked~.form:focus-within~.avatar::before,
+.blind-check:checked~.form:focus-within~.avatar svg#monkey .monkey-eye-nose,
+.blind-check:checked~.form:focus-within~.avatar svg#monkey .monkey-eye-r,
+.blind-check:checked~.form:focus-within~.avatar svg#monkey .monkey-eye-l {
+  animation: none;
+}
+
+.form:focus-within~.avatar svg#monkey {
+  animation: slick 3s ease infinite 1s;
+  --center: rotateY(0deg);
+  --left: rotateY(-4deg);
+  --right: rotateY(4deg);
+}
+
+.form:focus-within~.avatar::before,
+.form:focus-within~.avatar svg#monkey .monkey-eye-nose,
+.blind-check:not(:checked)~.form:focus-within~.avatar svg#monkey .monkey-eye-r,
+.blind-check:not(:checked)~.form:focus-within~.avatar svg#monkey .monkey-eye-l {
+  ry: 3;
+  cy: 35;
+  animation: slick 3s ease infinite 1s;
+  --center: translateX(0);
+  --left: translateX(-0.5px);
+  --right: translateX(0.5px);
+}
+
+@keyframes slick {
+
+  0%,
+  100% {
+    transform: var(--center);
+  }
+
+  25% {
+    transform: var(--left);
+  }
+
+  75% {
+    transform: var(--right);
+  }
+}
+
+.card label.blind_input {
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  z-index: 4;
+  margin-right: -2rem;
+  position: absolute;
+  border: none;
+  right: calc(var(--p) + (var(--input-px) / 2));
+  bottom: calc(var(--p) + var(--submit-h) + var(--space-y) + (var(--input-py) / 1) + 3px);
+  padding: 4px 0;
+  width: var(--blind-w);
+  border-radius: 4px;
+  background-color: #fff;
+  color: #4d4d4d;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card label.blind_input:before {
+  content: "";
+  position: absolute;
+  left: calc((var(--input-px) / 2) * -1);
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: #8f8f8f;
+}
+
+.card label.blind_input:hover {
+  color: #262626;
+  background-color: #f2f2f2;
+}
+
+.blind-check~label.blind_input span.show,
+.blind-check:checked~label.blind_input span.hide {
+  display: none;
+}
+
+.blind-check~label.blind_input span.hide,
+.blind-check:checked~label.blind_input span.show {
+  display: block;
+}
+
+.form {
+  order: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form .title {
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-top: 0;
+  padding-bottom: 1rem;
+  color: rgba(0, 0, 0, 0.7);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.form .label_input {
+  white-space: nowrap;
+  font-size: 1rem;
+  margin-top: calc(var(--space-y) / 2);
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: 600;
+  display: inline;
+  text-align: left;
+  margin-right: auto;
+  position: relative;
+  z-index: 99;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.form .input {
+  resize: vertical;
+  background: white;
+  border: 1px solid #8f8f8f;
+  border-radius: 6px;
+  outline: none;
+  padding: var(--input-py) var(--input-px);
+  font-size: 18px;
+  width: 100%;
+  color: #000000b3;
+  margin: var(--space-y) 0;
+  transition: all 0.25s ease;
+}
+
+.form .input#password-input {
+  padding-right: calc(var(--blind-w) + var(--input-px) + 4px);
+}
+
+.form .input:focus {
+  border: 1px solid #0969da;
+  outline: 0;
+  box-shadow: 0 0 0 2px #0969da;
+}
+
+.form .frg_pss {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+}
+
+.form .frg_pss a {
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.25s ease;
+  color: #000000b3;
+  font-weight: 500;
+  float: right;
+}
+
+.form .frg_pss a:hover {
+  color: #000;
+}
+
+.form .submit {
+  height: var(--submit-h);
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+  background-color: #fff;
+  background-image: linear-gradient(-180deg,
+      rgba(255, 255, 255, 0.09) 0%,
+      rgba(17, 17, 17, 0.04) 100%);
+  border: 1px solid rgba(22, 22, 22, 0.2);
+  font-weight: 500;
+  letter-spacing: 0.25px;
+  color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  -webkit-appearance: button;
+  appearance: button;
+  margin: var(--space-y) 0 0;
+}
+
+.form .submit:hover {
+  background-image: linear-gradient(-180deg,
+      rgba(255, 255, 255, 0.18) 0%,
+      rgba(17, 17, 17, 0.08) 100%);
+  border: 1px solid rgba(22, 22, 22, 0.2);
+  color: #111;
+}
+
+.blind-check:checked~.form .input[type="text"] {
+  /* text-emphasis: circle; */
+  -webkit-text-security: disc;
+}
+
+
+
+
+/* Dashboard */
+.custum-file-upload {
+  height: 200px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  gap: 20px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #e8e8e8;
+  background-color: #212121;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0px 20px 14px 4px #26c5d1;
+}
+
+.custum-file-upload .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custum-file-upload .icon svg {
+  height: 80px;
+  fill: #e8e8e8;
+}
+
+.custum-file-upload .text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custum-file-upload .text span {
+  font-weight: 400;
+  color: #e8e8e8;
+}
+
+.custum-file-upload input {
+  display: none;
+}
+
+
+
+
+
+
+
+/* CARDS............................................................ */
+
+/* From Uiverse.io by imtausef */
+/* From Uiverse.io by Tiagoadag */
+.here {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 4rem;
+  justify-items: center;
+}
+
+/* .cardhere {
+ width: 190px;
+ height: 254px;
+ background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+ border-radius: 20px;
+ transition: all .3s;
+} */
+
+.card2 {
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  /* extra hissa hide ho jaayega */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  /* thoda contrast bg */
+}
+
+.card2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* image ko crop karega but distort nahi karega */
+}
+
+
+.card2:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+}
+
+.cardhere:hover {
+  box-shadow: 0px 0px 30px 1px rgb(68, 227, 255);
+}
+
+/* CARDS............................................................ */
+
+
+/* Admin */
+/* From Uiverse.io by guilhermeyohan */
+.login-box {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(217, 216, 216, 0.987);
+  box-sizing: border-box;
+  box-shadow: 0 16px 25px rgba(0, 255, 255, 0.4);
+
+  border-radius: 10px;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  color: black;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 24px;
+  /* color: #fff; */
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  /* font-size: 1.2rem; */
+  left: 0;
+  padding: 10px 0;
+  /* font-size: 23px; */
+  /* color: #fff; */
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus~label,
+.login-box .user-box input:valid~label {
+  top: -30px;
+  left: 0;
+  /* color: #bdb8b8; */
+  color: black;
+  font-size: 16px;
+  /* margin: 1rem; */
+  /* margin-bottom: 1.3rem; */
+}
+
+.login-box form button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #000000;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+.login-box button:hover {
+  background: #35add1;
+  color: #000000;
+  border-radius: 5px;
+}
+
+.login-box button span {
+  position: absolute;
+  display: block;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.login-box button span:nth-child(1) {
+  bottom: 2px;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  /* border: 2px solid black; */
+  background: linear-gradient(90deg, transparent, #000000);
+  animation: btn-anim1 2s linear infinite;
+}
+
+
+
+/* area */
+/* From Uiverse.io by mymiamo */
+.status-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+  gap: 20px;
+}
+
+.status {
+  display: flex;
+  box-shadow: 0 5px 22px rgba(0, 255, 255, 0.4);
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #222533;
+  color: #fbebe2;
+  padding: 20px;
+  width: auto;
+  height: 200px;
+  border-radius: 26px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  transition: all 0.3s ease-in-out;
+  border: transparent 1px solid;
+}
+
+.status span {
+  font-size: 3.5rem;
+  font-weight: 900;
+  transition: all 0.3s ease-in-out;
+}
+
+.status p {
+  font-size: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+.status:hover {
+  background-color: #1d1d1d;
+  transform: scale(1.0.63);
+  border: #5e63ff 1px solid;
+}
+
+.status:hover p {
+  font-size: 15px;
+  font-weight: 500;
+  color: #b1cbf6;
+}
+
+.status:hover span {
+  font-size: 4rem;
+  color: #5e63ff;
+}
+
+.mac-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.mac-header span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.mac-header .red {
+  background-color: #ff5f57;
+}
+
+.mac-header .yellow {
+  background-color: #ffbd2e;
+}
+
+.mac-header .green {
+  background-color: #28c941;
+}
+
+@media (max-width: 768px) {
+  .status-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+
+
+
+/* ////////////////////// */
+/* From Uiverse.io by joe-watson-sbf */
+.usercard {
+  width: auto;
+  height: auto;
+  border-radius: 4px;
+  /* background: #212121; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: .4em;
+}
+
+.usercard p {
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all .5s;
+  background: #000000;
+  border: 1px solid #ff5a91;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.usercard p:hover {
+  flex: 4;
+}
+
+.usercard p span {
+  min-width: 14em;
+  padding: .5em;
+  text-align: center;
+  transform: rotate(-90deg);
+  transition: all .5s;
+  text-transform: uppercase;
+  color: #ff568e;
+  letter-spacing: .1em;
+}
+
+.usercard p:hover span {
+  transform: rotate(0);
+}
+
+.a_here {
+  width: 80vw;
+}
+
+
+
+
+
+/* new btn */
+/* From Uiverse.io by zymantas-katinas */
+.button {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+  font-family: sans-serif;
+}
+
+/* Shadow layer */
+.button .shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  transform: translateY(2px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+/* Edge layer */
+.button .edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(to left,
+      hsl(217, 33%, 16%) 0%,
+      hsl(217, 33%, 32%) 8%,
+      hsl(217, 33%, 32%) 92%,
+      hsl(217, 33%, 16%) 100%);
+}
+
+/* Front layer */
+.button .front {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  font-size: 1.25rem;
+  color: black;
+  background: hsl(195, 57%, 49%);
+  border-radius: 8px;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.span {
+  background: hsl(195, 57%, 49%);
+  border: none;
+}
+
+/* Hover and active states */
+.button:hover .shadow {
+  transform: translateY(4px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.button:hover .front {
+  transform: translateY(-6px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.button:active .shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.button:active .front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+/* Disable text selection */
+.button .front .span {
+  user-select: none;
+}
+
+
+
+.head {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  opacity: 0.5;
+  top: 54px;
+  position: relative;
+}
+
+
+/* home////////////////////////////////////////////////////////////////////// */
+/* From Uiverse.io by bociKond */ 
+.spin{
+  display: flex;
+  /* border: 2px solid red; */
+  text-align: center;
+  justify-content: center;
+  /* margin: 1rem; */
+}
+.spinner {
+  margin-top: 3rem;
+  width: 70.4px;
+  height: 70.4px;
+  --clr: rgb(247, 197, 159);
+  --clr-alpha: rgb(247, 197, 159,.1);
+  animation: spinner 1.6s infinite ease;
+  transform-style: preserve-3d;
+}
+
+.spinner > div {
+  background-color: var(--clr-alpha);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  border: 3.5px solid var(--clr);
+}
+
+.spinner div:nth-of-type(1) {
+  transform: translateZ(-35.2px) rotateY(180deg);
+}
+
+.spinner div:nth-of-type(2) {
+  transform: rotateY(-270deg) translateX(50%);
+  transform-origin: top right;
+}
+
+.spinner div:nth-of-type(3) {
+  transform: rotateY(270deg) translateX(-50%);
+  transform-origin: center left;
+}
+
+.spinner div:nth-of-type(4) {
+  transform: rotateX(90deg) translateY(-50%);
+  transform-origin: top center;
+}
+
+.spinner div:nth-of-type(5) {
+  transform: rotateX(-90deg) translateY(50%);
+  transform-origin: bottom center;
+}
+
+.spinner div:nth-of-type(6) {
+  transform: translateZ(35.2px);
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
+  }
+
+  50% {
+    transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
+  }
+
+  100% {
+    transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
+  }
+}
+
+
+
+
+
+/* From Uiverse.io by ShrinilDhorda */ 
+.btn {
+  margin-top: 3rem;
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: rgb(14, 14, 26);
+  color: rgb(234, 234, 234);
+  font-weight: 700;
+  transition: 0.6s;
+  box-shadow: 0px 0px 60px #1f4c65;
+  -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+}
+
+.btn:active {
+  scale: 0.92;
+}
+
+.btn:hover {
+  background: rgb(2,29,78);
+  background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
+  color: rgb(4, 4, 38);
+}
+/* home////////////////////////////////////////////////////////////////////// */
