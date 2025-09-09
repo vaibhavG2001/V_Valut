@@ -17,7 +17,7 @@ export default function EachUser() {
 
 
     async function DeleteUser() {
-        let sendDeleteUser = await axios.post("https://v-valut.onrender.com/deleteuser", { id: id })
+        let sendDeleteUser = await axios.post("http://localhost:5000/deleteuser", { id: id })
         if (sendDeleteUser.data.alluser.length>0){
             navigate("/adminarea")
         }

@@ -13,9 +13,10 @@ export default function Admin() {
     function admin(e) {
         e.preventDefault()
         dispatch({ type: "btn" })
-        let sendAdminData = axios.post("https://v-valut.onrender.com/adminlogin", state,{withCredentials:true})
+        
+        let sendAdminData = axios.post("http://localhost:5000/adminlogin", state,{withCredentials:true})
             .then((response) => {
-                // console.log(response)
+                console.log(response)
                 functionBackdata(response.data)
                 if(response.status==200){
                     navigate("/adminarea",{state:{logout:true}})

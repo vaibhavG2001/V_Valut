@@ -19,7 +19,7 @@ export default function Registration() {
     let [registerReply, functionRegister] = useState('')
     async function registerbtn() {
         try {
-            let sendregisterElement = await axios.post("https://v-valut.onrender.com/registration", state, { withCredentials: true })
+            let sendregisterElement = await axios.post("http://localhost:5000/registration", state, { withCredentials: true })
 
             if (sendregisterElement.status == 200) {
                 navigate("/login")

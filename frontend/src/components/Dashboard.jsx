@@ -11,6 +11,8 @@ export default function Dashboard() {
 
 
     let [url, functionUrl] = useState('')
+    let [pleaseWait, functionPleaseWait] = useState('')
+
     async function sendfileToDashboard(e) {
         try {
 
@@ -18,11 +20,16 @@ export default function Dashboard() {
             let mainContainer = new FormData()
             mainContainer.append("file", data)
 
-            let request = await axios.post("https://v-valut.onrender.com/dashboard", mainContainer, { withCredentials: true })
+
+            functionPleaseWait("true")
+            let request = await axios.post("http://localhost:5000/dashboard", mainContainer, { withCredentials: true })
+            console.log(request)
+
+            functionPleaseWait('')
 
             functionUrl(request.data.public_id)
             functionDashboardData(request.data.imgArray)
-            console.log(request)
+            // console.log(request)
         }
 
         catch (err) {
@@ -37,8 +44,11 @@ export default function Dashboard() {
     let [WelcomeName, functionWelcomeName] = useState('')
     useEffect(() => {
         function showcards() {
-            let send = axios.get("https://v-valut.onrender.com/showcards", { withCredentials: true }).then((data) => {
-                // console.log(data)
+            let send = axios.get("http://localhost:5000/showcards", { withCredentials: true }).then((data) => {
+
+
+
+
                 functionDashboardData(data.data.imgarray)
                 functionWelcomeName(data.data.name)
 
@@ -69,10 +79,39 @@ export default function Dashboard() {
 
             </div>
 
+
+
+
+
+            <div className="text-center" style={{textAlign:"center",display:"flex",justifyContent:"center",alignItems:"center",minHeight:"10vh"}}>
+                {pleaseWait == "true" ?
+                    <div class="loader text-center">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                        <div class="bar4"></div>
+                        <div class="bar5"></div>
+                        <div class="bar6"></div>
+                        <div class="bar7"></div>
+                        <div class="bar8"></div>
+                        <div class="bar9"></div>
+                        <div class="bar10"></div>
+                        <div class="bar11"></div>
+                        <div class="bar12"></div>
+                    </div>
+
+                    : ""}
+            </div>
+
+
+
+
+
+
             <div className="my-4 here">
                 {DashboardData.length > 0 ? DashboardData.map((element, index) => {
                     const ext = element.split('.').pop().toLowerCase();
-                    console.log(ext)
+                    // console.log(ext)
                     if (ext === "png" || ext === "jpg" || ext === "jpeg") {
 
                         return (

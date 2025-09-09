@@ -18,7 +18,7 @@ const nodemailer = require("nodemailer")
 
 
 //////////////////
-const upload = require("./upload")
+const upload=require("./upload")
 //////////////////
 
 
@@ -29,22 +29,10 @@ app.use(cookieParser())
 app.use("/uploads", express.static(path.join(__dirname, "uploads")))
 
 // app.use(express.urlencoded({ extended: true }))
-const allowedOrigins = [
-  "http://localhost:3000",
-  "https://v-valut-2.onrender.com"
-];
-
 app.use(cors({
-  origin: function(origin, callback) {
-    if (!origin) return callback(null, true); // allow non-browser tools (Postman)
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true
-}));
+    origin: "http://localhost:3000",
+    credentials: true,
+}))
 
 
 app.post("/registration", async (req, res) => {
@@ -178,7 +166,7 @@ app.post("/dashboard", middleware, upload.single("file"), async (req, res) => {
         let { id } = req.user
         // console.log(id)
         let find = await schema.findOne({ _id: id })
-
+        
         if (find) {
             if (!find.uploadImg.includes(req.file.path)) {
                 let { uploadImg } = find
@@ -193,7 +181,7 @@ app.post("/dashboard", middleware, upload.single("file"), async (req, res) => {
                 return res.status(200).json({
                     imgArray: update.uploadImg,
                     msg: "Successfully uploaded!",
-                    public_id: req.file.filename
+                    public_id:req.file.filename
                 })
             }
 
@@ -323,7 +311,7 @@ app.post("/deleteuser", async (req, res) => {
     try {
 
         let { id } = req.body
-        let personFind = await schema.findOne({ _id: id })
+        let personFind=await schema.findOne({_id:id})
 
         let node = nodemailer.createTransport({
             service: "gmail",

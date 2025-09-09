@@ -6,14 +6,14 @@ import { useNavigate } from "react-router-dom";
 export default function Login() {
     let { state, dispatch } = UsecustomHook()
 
-    let navigate=useNavigate()
+    let navigate = useNavigate()
 
 
 
     let [loginStatus, functionLogin] = useState('')
     async function LoginSubmit() {
         try {
-            let sendDatalogin = await axios.post("https://v-valut.onrender.com/login", state, { withCredentials: true })
+            let sendDatalogin = await axios.post("http://localhost:5000/login", state, { withCredentials: true })
             console.log(sendDatalogin)
             functionLogin(sendDatalogin.data)
 
@@ -29,11 +29,19 @@ export default function Login() {
 
         catch (err) {
             functionLogin(err.response.data)
+
+
+            setTimeout(() => {
+                functionLogin('')
+            }, 1200);
             console.log("login error", err)
         }
 
     }
+
+
     return (
+
         <>
             <h1 className='text-center my-4'>Login</h1>
             <div className='upperform2'>
@@ -61,7 +69,7 @@ export default function Login() {
 
                         <div class="frg_pss">
                             <label class="label_input" for="password-input">Password</label>
-                            <a href="">Forgot password?</a>
+
                         </div>
                         <input
                             onChange={(e) => dispatch({ type: "password", value: e.target.value })}
@@ -72,7 +80,7 @@ export default function Login() {
                             id="password-input"
                         />
 
-                        <p style={{ fontSize: "0.9rem" }}>{loginStatus}</p>
+                        <p style={{ fontSize: "0.9rem", color: "black" }}>{loginStatus}</p>
                         <button class="submit" onClick={LoginSubmit} type="button">Submit</button>
                     </form>
 

@@ -1,5 +1,5 @@
 let mongoose = require("mongoose")
-mongoose.connect("mongodb+srv://vaibhavkashyap872_db_user:vgthescube@cluster0.ii998ma.mongodb.net/").then(() => {
+mongoose.connect("mongodb://127.0.0.1:27017/mydatabase").then(() => {
     console.log("Connected...")
 }).catch((err) => {
     console.log("not connected")
