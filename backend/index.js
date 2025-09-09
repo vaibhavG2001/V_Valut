@@ -30,21 +30,20 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")))
 
 // app.use(express.urlencoded({ extended: true }))
 const allowedOrigins = [
-    "http://localhost:3000",
-    "https://v-valut-2.onrender.com"
+  "http://localhost:3000",
+  "https://v-valut-2.onrender.com"
 ];
 
 app.use(cors({
-    origin: function (origin, callback) {
-        // allow requests with no origin (like mobile apps, Postman)
-        if (!origin) return callback(null, true);
-        if (allowedOrigins.indexOf(origin) === -1) {
-            let msg = 'The CORS policy for this site does not allow access from the specified Origin.';
-            return callback(new Error(msg), false);
-        }
-        return callback(null, true);
-    },
-    credentials: true
+  origin: function(origin, callback) {
+    if (!origin) return callback(null, true); // allow non-browser tools (Postman)
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
 }));
 
 
