@@ -16,7 +16,7 @@ export default function AdminArea() {
     useEffect(() => {
         async function verify() {
             try {
-                let check = await axios.get("http://localhost:5000/check", { withCredentials: true })
+                let check = await axios.get("https://v-valut.onrender.com/check", { withCredentials: true })
             }
 
             catch (err) {
@@ -36,7 +36,7 @@ export default function AdminArea() {
 
         async function adminArea() {
             try {
-                let send = await axios.get("http://localhost:5000/adminarea", { withCredentials: true })
+                let send = await axios.get("https://v-valut.onrender.com/adminarea", { withCredentials: true })
                 // console.log(send)
                 functionAllUserData(send.data.allUser)
             }
@@ -62,7 +62,7 @@ export default function AdminArea() {
 
 // LogoutAdmin///////////////////////////////////////////////////
     async function logoutAdmin(){
-        let reques_for_AdminLogout=axios.get("http://localhost:5000/logoutAdmin",{withCredentials:true}).then((api_data)=>{
+        let reques_for_AdminLogout=axios.get("https://v-valut.onrender.com/logoutAdmin",{withCredentials:true}).then((api_data)=>{
           
             if(api_data.status==200){
                 navigate("/admin")

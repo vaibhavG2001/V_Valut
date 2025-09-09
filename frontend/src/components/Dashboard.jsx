@@ -18,7 +18,7 @@ export default function Dashboard() {
             let mainContainer = new FormData()
             mainContainer.append("file", data)
 
-            let request = await axios.post("http://localhost:5000/dashboard", mainContainer, { withCredentials: true })
+            let request = await axios.post("https://v-valut.onrender.com/dashboard", mainContainer, { withCredentials: true })
 
             functionUrl(request.data.public_id)
             functionDashboardData(request.data.imgArray)
@@ -37,7 +37,7 @@ export default function Dashboard() {
     let [WelcomeName, functionWelcomeName] = useState('')
     useEffect(() => {
         function showcards() {
-            let send = axios.get("http://localhost:5000/showcards", { withCredentials: true }).then((data) => {
+            let send = axios.get("https://v-valut.onrender.com/showcards", { withCredentials: true }).then((data) => {
                 // console.log(data)
                 functionDashboardData(data.data.imgarray)
                 functionWelcomeName(data.data.name)
