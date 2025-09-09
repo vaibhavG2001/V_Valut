@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "cloudinary": "^1.37.2",
-    "framer-motion": "^12.23.12"
+    "framer-motion": "^12.23.12",
+    "react-scripts": "^5.0.1"
   }
 }
